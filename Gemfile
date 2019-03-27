@@ -32,4 +32,6 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+gem 'devise', '~> 4.6', '>= 4.6.2'
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
