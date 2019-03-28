@@ -21,3 +21,6 @@ Bootstrap -> Formatting
 ### Instructions
 - Update email sender at devise.rb
 ```  config.mailer_sender = 'youremail@yourdomain.com' ```
+
+### Refactor  TODOS:
+- Refactor user association integration test in post_spec
