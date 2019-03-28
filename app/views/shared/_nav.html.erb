@@ -3,13 +3,13 @@
 </div>
 
 <ul class="custom-nav nav nav-tabs">
-  <li class="nav-item">
+  <li class="nav-item <%= active?(root_path) %>">
     <%= link_to "Home", root_path %>
   </li>
-  <li class="nav-item">
+  <li class="nav-item <%= active?(posts_path) %>">
     <%= link_to "Time Entries", posts_path %>
   </li>
-  <li class="nav-item dropdown ml-md-auto">
+  <li class="nav-item dropdown ml-md-auto <%= active?(edit_user_registration_path) %>">
     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Account</a>
     <ul class="dropdown-menu">
       <li>
