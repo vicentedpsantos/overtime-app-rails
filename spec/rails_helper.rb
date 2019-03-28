@@ -27,5 +27,6 @@ RSpec.configure do |config|
   config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
   config.infer_spec_type_from_file_location!
+  config.include FactoryBot::Syntax::Methods
   # config.filter_gems_from_backtrace
 end
