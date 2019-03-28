@@ -1,11 +1,13 @@
 FactoryBot.define do
   factory :post do
     date { Date.today }
-    rationale { 'Any rationale' }
+    rationale { 'Some rationale' }
+    user
   end
 
   factory :second_post, class: 'Post' do
     date { Date.yesterday }
-    rationale { 'Another dumb rationale' }
+    rationale { 'Some more content' }
+    user
   end
 end
