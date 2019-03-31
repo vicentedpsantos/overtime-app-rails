@@ -39,5 +39,6 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'gritter', '~> 1.2'
 gem 'administrate', '~> 0.11.0'
 gem 'bourbon'
+gem 'pundit', '~> 2.0', '>= 2.0.1'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
