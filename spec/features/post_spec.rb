@@ -25,6 +25,18 @@ describe 'navigate' do
       visit posts_path
       expect(page).to have_content(/Rationale|content/)
     end
+
+    it 'has a scope so that only post creators can see their posts' do
+      post1 = Post.create(date: Date.today, rationale: 'asdafas', user_id: @user.id)
+      post2 = Post.create(date: Date.today, rationale: 'asdafas', user_id: @user.id)
+
+      another_user = User.create(first_name: 'John', last_name: 'Ronaldo', email: 'gfefefkeo@gmail.com', password: 'ff12fe', password_confirmation: 'ff12fe')
+      post_from_another_user = Post.create(date: Date.today, rationale: 'This post shouldnt be seen', user_id: another_user.id)
+
+      visit posts_path
+
+      expect(page).to_not have_content(/This post shouldnt be seen/)
+    end
   end
 
   describe 'new' do
@@ -39,6 +51,7 @@ describe 'navigate' do
   describe 'delete' do
     it 'can be deleted' do
       @post = FactoryBot.create(:post)
+      @post.update(user_id: @user.id)
       visit posts_path(@post)
 
       click_link("delete_post_#{@post.id}_from_index")
