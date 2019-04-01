@@ -14,9 +14,11 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
 
     if @post.save
-      redirect_to @post, notice: 'Your post was created successfully'
+      redirect_to @post
+      flash[:success] = 'Your post was created successfully'
     else
-      render :new, notice: 'Your post was not created!'
+      render :new
+      flash[:error] = 'Your post was not created'
     end
   end
 
@@ -27,7 +29,8 @@ class PostsController < ApplicationController
   def update
     authorize @post
     if @post.update(post_params)
-      redirect_to @post, notice: 'Your post was updated successfully'
+      redirect_to @post
+      flash[:success] = 'Your post was updated successfully'
     else
       render :edit
     end
