@@ -20,6 +20,7 @@ group :development, :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_bot_rails', '~> 5.0', '>= 5.0.1'
+  gem 'dot_env', '~> 0.0.3'
 end
 
 group :development do
@@ -41,5 +42,6 @@ gem 'administrate', '~> 0.11.0'
 gem 'bourbon'
 gem 'pundit', '~> 2.0', '>= 2.0.1'
 gem 'twilio-ruby', '~> 5.21', '>= 5.21.2'
+
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
