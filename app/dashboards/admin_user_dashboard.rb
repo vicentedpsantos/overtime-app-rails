@@ -1,7 +1,6 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class AdminUserDashboard < Administrate::BaseDashboard
-
   ATTRIBUTE_TYPES = {
     posts: Field::HasMany.with_options(searchable: false),
     id: Field::Number.with_options(searchable: false),
@@ -15,35 +14,38 @@ class AdminUserDashboard < Administrate::BaseDashboard
     last_name: Field::String.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
-    type: Field::String.with_options(searchable: false)
+    type: Field::String.with_options(searchable: false),
+    phone: Field::String.with_options(searchable: false)
   }.freeze
 
-  COLLECTION_ATTRIBUTES = [
-    :posts,
-    :id,
-    :email,
+  COLLECTION_ATTRIBUTES = %i[
+    posts
+    id
+    email
   ].freeze
 
-  SHOW_PAGE_ATTRIBUTES = [
-    :posts,
-    :id,
-    :email,
-    :sign_in_count,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
-    :first_name,
-    :last_name,
-    :type,
-    :created_at,
-    :updated_at,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    posts
+    id
+    email
+    phone
+    sign_in_count
+    last_sign_in_at
+    current_sign_in_ip
+    last_sign_in_ip
+    first_name
+    last_name
+    type
+    created_at
+    updated_at
   ].freeze
 
-  FORM_ATTRIBUTES = [
-    :email,
-    :password,
-    :first_name,
-    :last_name,
-    :type,
+  FORM_ATTRIBUTES = %i[
+    email
+    password
+    first_name
+    last_name
+    type
+    phone
   ].freeze
 end
