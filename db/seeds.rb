@@ -17,9 +17,9 @@ AdminUser.create(email: 'admin@test.com',
 puts '1 admin user created'
 
 10.times do |post|
-  Post.create!(date: Date.today, status: 0, rationale: "#{post} rationale content", user_id: @user.id, overtime_request: 2.5)
-  Post.create!(date: Date.today, status: 1, rationale: "#{post} rationale content", user_id: @user.id, overtime_request: 4.5)
-  Post.create!(date: Date.today, status: 2, rationale: "#{post} rationale content", user_id: @user.id, overtime_request: 6.5)
+  Post.create!(date: Date.today, status: 0, rationale: "#{post} rationale content Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user_id: @user.id, overtime_request: 2.5)
+  Post.create!(date: Date.today, status: 1, rationale: "#{post} rationale content Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user_id: @user.id, overtime_request: 4.5)
+  Post.create!(date: Date.today, status: 2, rationale: "#{post} rationale content Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", user_id: @user.id, overtime_request: 6.5)
 end
 
 20.times do |audit_log|
