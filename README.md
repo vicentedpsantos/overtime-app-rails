@@ -7,13 +7,16 @@
 - Post -> date:date rationale:text
 - User -> Devise
 - AdminUser -> STI
+- AuditLog
 
 ## Features:
 - Approval Workflow
 - SMS Sending -> Link to approval or overtime input
 - Administrative admin dashboard
-- Email summary to managers for Approval
-- needs to be documented if employee did not log Overtime
+- Block non admin and guest users
+- Document if employee did not log Overtime
+- Create audit log for each text message
+- Need to update end_date when confirmed
 
 ## UI:
 Bootstrap -> Formatting
