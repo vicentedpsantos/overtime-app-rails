@@ -20,11 +20,12 @@ Rails.application.configure do
 
   config.active_storage.service = :local
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 5002 }
-
-  config.action_mailer.raise_delivery_errors = false
-
+  # E-mail deliveries config
   config.action_mailer.perform_caching = false
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 5002 }
+  ##
 
   config.active_support.deprecation = :log
 
