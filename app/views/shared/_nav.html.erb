@@ -9,25 +9,19 @@
     <li class="nav-item <%= active?(root_path) %>">
       <%= link_to "", root_path, class: 'glyphicon glyphicon-home' %>
     </li>
-    <li class="nav-item <%= active?(posts_path) %>">
-      <%= link_to "Time Entries", posts_path %>
-    </li>
 
-    <%= render 'shared/audit_log_tab' if policy(AuditLog).index? %>
+    <%= render 'shared/employee_nav_items' if employee? %>
 
-    <li class="nav-item <%= active?(new_post_path) %>">
-      <%= link_to "Request Overtime", new_post_path, id: 'new_post_from_nav' %>
-    </li>
+    <%= render 'shared/audit_log_tab' if admin? %>
+
+
     <li class="nav-item dropdown ml-md-auto">
       <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Options</a>
       <ul class="dropdown-menu">
         <!-- TODO -->
-        <% if current_user.try(:type) == 'AdminUser' %>
-          <li>
-            <%= link_to "Admin Dashboard", admin_root_path %>
-          </li>
-          <li class="divider"></li>
-        <% end %>
+
+        <%= render 'shared/admin_dropdown' if admin? %>
+
         <!-- TODO -->
         <li>
           <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
