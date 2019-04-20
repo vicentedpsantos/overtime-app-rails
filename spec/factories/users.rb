@@ -10,6 +10,8 @@ FactoryBot.define do
     password { 'asdfasdf' }
     password_confirmation { 'asdfasdf' }
     phone { '+2345678912345' }
+    ssn { 1234 }
+    company { 'abc company' }
   end
 
   factory :non_authorized_user, class: 'User' do
@@ -19,6 +21,8 @@ FactoryBot.define do
     password { 'asdfasdf' }
     password_confirmation { 'asdfasdf' }
     phone { '+2345678912345' }
+    ssn { 1234 }
+    company { 'abc company' }
   end
 
   factory :admin_user, class: 'AdminUser' do
@@ -28,5 +32,7 @@ FactoryBot.define do
     password { 'asdfasdf' }
     password_confirmation { 'asdfasdf' }
     phone { '+2345678912345' }
+    ssn { 1234 }
+    company { 'abc company' }
   end
 end
