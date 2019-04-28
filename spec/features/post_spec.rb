@@ -4,7 +4,7 @@ describe 'navigate' do
   let(:user) { FactoryBot.create(:user) }
 
   let(:post) do
-    Post.create(date: Date.today, rationale: 'Rationale', user_id: user.id, overtime_request: 0.05)
+    Post.create(date: Date.today, rationale: 'Rationale', user_id: user.id, daily_hours: 0.05)
   end
 
   before do
@@ -33,7 +33,7 @@ describe 'navigate' do
 
     it 'has a scope so that only post creators can see their posts' do
       another_user = User.create(first_name: 'John', last_name: 'Ronaldo', email: 'gfefefkeo@gmail.com', password: 'ff12fe', password_confirmation: 'ff12fe', phone: '+2345678912345')
-      post_from_another_user = Post.create(date: Date.today, rationale: 'This post shouldnt be seen', user_id: another_user.id, overtime_request: 2.5)
+      post_from_another_user = Post.create(date: Date.today, rationale: 'This post shouldnt be seen', user_id: another_user.id, daily_hours: 2.5)
 
       visit posts_path
 
@@ -59,7 +59,7 @@ describe 'navigate' do
       delete_user = FactoryBot.create(:user)
       login_as(delete_user, scope: :user)
 
-      post_to_delete = Post.create(date: Date.today, rationale: 'asdf', user_id: delete_user.id, overtime_request: 0.5)
+      post_to_delete = Post.create(date: Date.today, rationale: 'asdf', user_id: delete_user.id, daily_hours: 0.5)
 
       visit posts_path(@post)
 
@@ -78,7 +78,7 @@ describe 'navigate' do
     it 'can be created from new form page' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: 'Some rationale'
-      fill_in 'post[overtime_request]', with: 4.5
+      fill_in 'post[daily_hours]', with: 4.5
 
       expect { click_on 'Save' }.to change(Post, :count).by(1)
     end
@@ -86,7 +86,7 @@ describe 'navigate' do
     it 'will have a user associated with it' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: 'User Association'
-      fill_in 'post[overtime_request]', with: 4.5
+      fill_in 'post[daily_hours]', with: 4.5
       click_on 'Save'
 
       expect(User.last.posts.last.rationale).to eq('User Association')
