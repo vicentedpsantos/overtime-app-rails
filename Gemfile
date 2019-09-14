@@ -35,7 +35,7 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'devise', '~> 4.7'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'gritter', '~> 1.2'
 gem 'administrate', '~> 0.11.0'
